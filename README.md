@@ -1,6 +1,6 @@
 ## Classroom Project 6 by Sheryians Coding School
 
-This is a responsive and attractive agency/portfolio template built with HTML, CSS, and SCSS. It adapts seamlessly to all devices, showcasing services and projects with a clean, professional design.
+This is a simple game, Mysterious Box: Find Doraemon, a responsive game where the user must find the correct box containing Doraemon within 2 chances. The game includes interactive sounds for selecting the wrong box, finding the correct one, and moving between boxes. Control buttons allow navigation (Next, Previous) and the option to open a box or restart the game.
 
 ## Live Demo
 
