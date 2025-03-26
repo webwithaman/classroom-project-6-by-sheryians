@@ -1,0 +1,199 @@
+/* Google Fonts Import */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* Reset Default Styles Start */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+}
+/* Reset Default Styles End */
+
+/* Page-Specific Styles Start */
+.site-wrapper {
+  padding: 1.5rem;
+  min-height: 100vh;
+  background-color: #f5f6fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  text-align: center;
+}
+
+/* Game Title */
+.game-title {
+  font-weight: 550;
+  font-size: 3rem;
+  color: #192a56;
+  margin-bottom: 2rem;
+}
+
+/* Game State Message */
+.game-state-message {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #2f3640;
+}
+
+.game-state-message-animate {
+  animation: game-state-message-animate 1.2s linear infinite alternate;
+}
+
+@keyframes game-state-message-animate {
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* Boxes Container Start */
+.boxes-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.boxes-container .box {
+  flex: 1;
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e84118;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.199);
+}
+
+.boxes-container .box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: #031134;
+  transition: all 0.2s ease-in;
+  display: grid;
+  place-items: center;
+}
+
+.boxes-container .box.selected::before {
+  background-color: #fff;
+  border: 0.4rem solid #031134;
+}
+
+.boxes-container .box.open::before {
+  top: -100%;
+}
+
+.boxes-container .box img.wrong-choice {
+  width: 70%;
+}
+
+.boxes-container .box img.doremon {
+  width: 100%;
+}
+
+.boxes-container .box img.question-mark {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  width: 40%;
+  animation: animate-question-mark 1s linear infinite alternate;
+}
+
+/* Animate Question Mark Image */
+@keyframes animate-question-mark {
+  0% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+
+.boxes-container .box.selected .question-mark {
+  display: initial;
+}
+
+.boxes-container .box.open .question-mark {
+  display: none;
+}
+/* Boxes Container End */
+
+/* Control Buttons Start */
+.control-btns {
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+button {
+  width: 40%;
+  padding: 1.2rem 1.6rem;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: unset;
+  text-transform: unset;
+  letter-spacing: 0.3px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.139);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+button:active {
+  transform: scale(0.87);
+}
+
+button:nth-child(1) {
+  background-color: #4cd137;
+}
+
+button:nth-child(2) {
+  background-color: #2cb9ff;
+}
+
+button:nth-child(3) {
+  background-color: #e84118;
+}
+
+button:nth-child(4) {
+  background-color: #7f8fa6;
+}
+
+/* Hover effects for devices that support hover (e.g., desktops) */
+@media (hover: hover) {
+  button:nth-child(1):hover {
+    background-color: #3ae120;
+  }
+
+  button:nth-child(2):hover {
+    background-color: #00aaff;
+  }
+
+  button:nth-child(3):hover {
+    background-color: #ff3300;
+  }
+
+  button:nth-child(4):hover {
+    background-color: #616e80;
+  }
+}
+/* Control Buttons End */
+
+/* Page-Specific Styles End */
